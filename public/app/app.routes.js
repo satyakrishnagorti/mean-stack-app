@@ -13,6 +13,16 @@ angular.module('app.routes', ['ngRoute'])
       templateUrl: 'app/views/pages/users/all.html',
       controller: 'userController',
       controllerAs: 'user'
+    })
+    .when('/users/create', {
+      templateUrl: 'app/views/pages/users/single.html',
+      controller: 'newCreateController',
+      controllerAs: 'user'
+    })
+    .when('/users/:user_id', {
+      templateUrl: 'app/views/pages/users/single.html',
+      controller: 'userEditController',
+      controllerAs: 'user'
     });
     $locationProvider.html5Mode(true); // remves # in routes
   });
